@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="/">WIKINIMOUS</a>
+  <form class="form-inline">
+      <a href="/articles/new">New Article</a>
+  </form>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+<ul>
+  <% @articles.each do |article| %>
+    <li><%=link_to(article.title, article_path(article), class: "title")%></li>
+    <li class="content"><%= article.content%></li>
+  <% end %>
+</ul>
+      </div>
+    </div>
+</div>
